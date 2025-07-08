@@ -25,7 +25,7 @@ import TextRevealCardPreview from "./components/ui/text-reveal-card-demo";
 import AnimatedTestimonialsDemo from "./components/ui/animated-testimonials-demo";
 import AppleCardsCarouselDemo from "./components/ui/apple-cards-carousel-demo";
 import VortexDemo from "./components/ui/vortex-demo";
-import OverlaySection from "./components/ui/OverlaySection";
+
 
 export default function Home() {
   const navItems = [
@@ -107,7 +107,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-full h-40 z-20 pointer-events-none" style={{background: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%)"}} />
         {/* Add hero content here if needed */}
       </section>
-      <OverlaySection visible={showOverlay} />
+ 
 
       {/* About + Stats Section (side by side on desktop) */}
       <section className="relative z-10 min-h-screen flex flex-col items-center justify-center p-8 sm:p-16 bg-black/20 overflow-hidden pb-0 gap-8">
