@@ -36,6 +36,7 @@ export default function Home() {
   ];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -159,19 +160,87 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative z-10 flex flex-col items-center justify-center p-8 sm:p-16 w-full bg-black">
-        <h2 className="text-4xl sm:text-6xl font-extrabold text-white mb-12 text-center">FAQ</h2>
-        <ExpandableCardFAQ
-          faqs={[
-            { question: "Can you work with specific budget?", answer: "Yes, we tailor our services to fit a wide range of budgets. Contact us to discuss your needs!" },
-            { question: "Do you work with businesses of all sizes?", answer: "Absolutely! We work with startups, small businesses, and large enterprises alike." },
-            { question: "Do you provide influence marketing?", answer: "Yes, we offer influencer marketing as part of our digital marketing services." },
-            { question: "What I want to do to collaborate with you!", answer: "Just reach out via our contact form or email, and we'll get back to you to discuss collaboration opportunities." },
-            { question: "Do you work with businesses of all sizes?", answer: "Yes, our solutions are scalable for any business size." },
-            { question: "Do you provide influence marketing?", answer: "We have a network of influencers to help promote your brand." },
-            { question: "What I want to do to collaborate with you!", answer: "Let's connect and explore how we can work together!" },
-          ]}
-        />
+      <section className="relative bg-black text-white py-16 px-4 overflow-hidden min-h-screen">
+        <div className="max-w-3xl mx-auto text-center">
+          <h1 className="text-6xl font-bold mb-4">We've Got the Answers You're Looking For</h1>
+          <h3 className="text-lg text-gray-400 mb-10">Quick answers to your AI automation questions.</h3>
+        </div>
+        <div className="max-w-2xl mx-auto space-y-6">
+          {[
+            {
+              q: "How can AI automation help my business?",
+              a: "AI automation boosts productivity by streamlining repetitive tasks and increasing efficiency.",
+            },
+            {
+              q: "Is AI automation difficult to integrate?",
+              a: "Modern tools are easy to integrate with user-friendly interfaces and APIs.",
+            },
+            {
+              q: "What industries benefit from AI automation?",
+              a: "Healthcare, finance, retail, logistics, and many more.",
+            },
+            {
+              q: "Do I need technical knowledge?",
+              a: "Not necessarily. Many platforms are built for non-technical users too.",
+            },
+            {
+              q: "What support is offered?",
+              a: "We provide 24/7 live chat, email support, and onboarding sessions.",
+            },
+          ].map((faq, idx) => {
+            const isOpen = openFaq === idx;
+            return (
+              <div
+                key={idx}
+                className={`relative rounded-xl overflow-hidden transition-all duration-300 bg-[#1c1c1c] faq-glow ${isOpen ? 'shadow-[0_0_40px_rgba(236,72,153,0.4),0_0_60px_rgba(168,85,247,0.4)]' : ''}`}
+                onMouseMove={e => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const x = e.clientX - rect.left;
+                  const y = e.clientY - rect.top;
+                  e.currentTarget.style.setProperty('--glow-x', `${x}px`);
+                  e.currentTarget.style.setProperty('--glow-y', `${y}px`);
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.setProperty('--glow-x', `-9999px`);
+                  e.currentTarget.style.setProperty('--glow-y', `-9999px`);
+                }}
+              >
+                {/* Radial Glow (simulating ::after) */}
+                <div
+                  className="pointer-events-none absolute z-0"
+                  style={{
+                    left: 'var(--glow-x, -9999px)',
+                    top: 'var(--glow-y, -9999px)',
+                    width: 520,
+                    height: 520,
+                    transform: 'translate(-50%, -50%)',
+                    background: 'radial-gradient(circle, rgba(236,72,153,0.25), transparent 60%)',
+                    borderRadius: '9999px',
+                    opacity: 1,
+                    transition: 'opacity 0.2s ease',
+                  }}
+                />
+                <button
+                  type="button"
+                  className={`faq-button w-full flex justify-between items-center px-6 py-4 text-left relative z-10 group cursor-pointer`}
+                  onClick={() => setOpenFaq(isOpen ? null : idx)}
+                >
+                  <span className="text-white font-medium">{faq.q}</span>
+                  <svg
+                    className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div className={`faq-answer px-6 pb-4 text-gray-300 transition-all duration-300 ${isOpen ? '' : 'hidden'}`}>{faq.a}</div>
+              </div>
+            );
+          })}
+        </div>
       </section>
 
       {/* Get in Touch Section */}
