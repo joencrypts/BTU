@@ -244,11 +244,42 @@ export default function Home() {
       </section>
 
       {/* Get in Touch Section */}
-      <section className="relative z-10 flex flex-col items-center justify-center p-8 sm:p-16 bg-black">
-        <TextRevealCardPreview />
-        <a href="mailto:hello@brandtopup.com" className="mt-8 inline-block px-8 py-3 bg-gradient-to-r from-purple-500 to-blue-400 text-white rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">
-          Get in Touch
-        </a>
+      <section className="bg-black text-white min-h-screen flex items-center justify-center px-6 py-16">
+        <div className="max-w-7xl w-full grid md:grid-cols-2 gap-10 items-center">
+          {/* Left Text */}
+          <div className="text-left">
+            <h2 className="text-8xl md:text-8xl font-extrabold leading-tight">
+              Let<span className="inline-block -ml-1">'</span>s<br />
+              Work<br />
+              Together
+            </h2>
+          </div>
+
+          {/* Right Form */}
+          <form className="space-y-4 w-full max-w-lg">
+            {/* Full Name */}
+            <input type="text" placeholder="Full Name"
+              className="w-full px-5 py-3 bg-transparent border border-white rounded-xl text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500 transition" />
+
+            {/* Phone + Email */}
+            <div className="flex flex-col md:flex-row gap-4">
+              <input type="tel" placeholder="Phone Number"
+                className="flex-1 px-5 py-3 bg-transparent border border-white rounded-xl text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500 transition" />
+              <input type="email" placeholder="Email"
+                className="flex-1 px-5 py-3 bg-transparent border border-white rounded-xl text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500 transition" />
+            </div>
+
+            {/* Message */}
+            <textarea rows={4} placeholder="Message"
+              className="w-full px-5 py-3 bg-transparent border border-white rounded-xl text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500 transition resize-none"></textarea>
+
+            {/* Submit Button */}
+            <button type="submit"
+              className="bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300">
+              Submit
+            </button>
+          </form>
+        </div>
       </section>
 
       {/* Footer */}
