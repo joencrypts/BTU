@@ -103,14 +103,14 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
   return (
     <div
       className={cn(
-        "flex flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 lg:flex lg:space-x-2",
+        "flex flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium lg:flex lg:space-x-2",
         className,
       )}
     >
       {items.map((item, idx) => (
         <a
           onClick={onItemClick}
-          className="px-4 py-2 text-neutral-600 dark:text-neutral-300 hover:text-zinc-800"
+          className="px-4 py-2 text-white hover:text-blue-400"
           key={`link-${idx}`}
           href={item.link}
         >
@@ -191,8 +191,8 @@ export const NavbarLogo = () => {
       <img
         src="/BRAND TOP UP - ICON LOGO WHITE.svg"
         alt="Brand Top Up Logo"
-        width={30}
-        height={30}
+        width={48}
+        height={48}
       />
     </a>
   );
