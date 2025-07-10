@@ -1,12 +1,13 @@
 {
-  "name": "btu",
+  "name": "brandtopup-admin",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@tabler/icons-react": "^3.34.0",
@@ -38,5 +39,23 @@
     "tailwindcss": "^4.1.11",
     "tw-animate-css": "^1.3.5",
     "typescript": "^5"
-  }
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/brandtopup.git"
+  },
+  "keywords": [
+    "nextjs",
+    "react",
+    "typescript",
+    "admin-dashboard",
+    "fastapi",
+    "postgresql"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
 }

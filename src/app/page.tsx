@@ -27,6 +27,7 @@ import TabsDemo from "./components/ui/tabs-demo";
 import { StaggerTestimonials } from "./components/ui/stagger-testimonials";
 import { TextGenerateEffect } from "./components/ui/text-generate-effect";
 import { ThreeDPhotoCarouselDemo } from "./components/ui/3d-carousel";
+import ContactForm from "./components/ContactForm";
 
 
 export default function Home() {
@@ -294,29 +295,7 @@ export default function Home() {
           </div>
 
           {/* Right Form - Improved Alignment */}
-          <form className="grid grid-cols-1 gap-y-6 w-full max-w-lg">
-            {/* Full Name */}
-            <input type="text" placeholder="Full Name"
-              className="w-full px-5 py-3 bg-transparent border border-white rounded-xl text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500 transition" />
-
-            {/* Phone + Email */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input type="tel" placeholder="Phone Number"
-                className="w-full px-5 py-3 bg-transparent border border-white rounded-xl text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500 transition" />
-              <input type="email" placeholder="Email"
-                className="w-full px-5 py-3 bg-transparent border border-white rounded-xl text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500 transition" />
-            </div>
-
-            {/* Message */}
-            <textarea rows={4} placeholder="Message"
-              className="w-full px-5 py-3 bg-transparent border border-white rounded-xl text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500 transition resize-none" />
-
-            {/* Submit Button */}
-            <button type="submit"
-              className="w-full bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300">
-              Submit
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </section>
 
@@ -325,7 +304,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 text-white items-start">
           {/* Column 1: Logo only */}
           <div className="flex justify-center md:justify-start items-start w-full md:w-1/3">
-            <img src="/BTU FINAL FULL LOGO WHITE.svg" alt="Logo" className="w-56 h-56 object-contain" />
+            <img src="/BTUL.png" alt="Logo" className="w-56 h-56 object-contain" />
           </div>
 
           {/* Column 2: Socials */}
