@@ -24,6 +24,9 @@ import VortexDemo from "./components/ui/vortex-demo";
 import { DemoOne } from "./components/ui/hero-odyssey";
 import SimpleLogoMarquee from "./components/ui/simple-logo-marquee";
 import TabsDemo from "./components/ui/tabs-demo";
+import { StaggerTestimonials } from "./components/ui/stagger-testimonials";
+import { TextGenerateEffect } from "./components/ui/text-generate-effect";
+import { ThreeDPhotoCarouselDemo } from "./components/ui/3d-carousel";
 
 
 export default function Home() {
@@ -46,7 +49,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative min-h-screen w-full bg-black overflow-x-hidden">
+    <div className="relative min-h-screen w-full bg-black overflow-x-hidden flex flex-col">
       {/* Floating Navbar */}
       <Navbar>
         {/* Desktop Navigation */}
@@ -105,6 +108,22 @@ export default function Home() {
         <div className="max-w-5xl w-full mx-auto mt-4">
           <TabsDemo />
         </div>
+      </section>
+
+      {/* 3D Photo Carousel Section */}
+      <section className="relative z-10 flex flex-col items-center justify-center py-8 bg-black">
+        <ThreeDPhotoCarouselDemo />
+      </section>
+
+      {/* Text Generate Effect Section */}
+      <section className="relative z-10 flex flex-col items-center justify-center py-4 bg-black">
+        <TextGenerateEffect words="What our clients say about us" className="text-4xl md:text-5xl text-center" />
+        <TextGenerateEffect words="Partner with the best Digital Marketing Agency in Dubai" className="text-2xl md:text-3xl text-center mt-2" />
+      </section>
+
+      {/* Stagger Testimonials Section */}
+      <section className="relative z-10 flex flex-col items-center justify-center py-8 bg-black">
+        <StaggerTestimonials />
       </section>
           
 
@@ -252,27 +271,36 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 p-8 sm:p-16 bg-black">
-        <div className="max-w-5xl mx-auto flex flex-col items-center">
-          <div className="flex flex-col sm:flex-row w-full justify-center items-start gap-12">
-            <div className="flex-shrink-0 flex justify-center items-center w-full sm:w-auto mb-8 sm:mb-0">
-              <img src="/BRAND TOP UP - ICON LOGO FINAL.svg" alt="Logo" className="w-28 h-28 object-contain" />
+      <footer className="relative z-10 pb-4 pt-8 sm:pb-6 sm:pt-12 bg-black mt-auto">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 text-white items-start">
+          {/* Column 1: Logo only */}
+          <div className="flex justify-center md:justify-start items-start w-full md:w-1/3">
+            <img src="/BTU FINAL FULL LOGO WHITE.svg" alt="Logo" className="w-56 h-56 object-contain" />
+          </div>
+
+          {/* Column 2: Socials */}
+          <div className="flex flex-col items-center md:items-start w-full md:w-1/3 mt-16">
+            <div className="flex items-center mb-4 mt-2 md:mt-0">
+              <span className="text-xl font-bold">Socials</span>
             </div>
-            <div className="flex flex-1 flex-col sm:flex-row justify-between w-full gap-16">
-              <div>
-                <div className="text-2xl font-semibold text-white mb-2">Social Media</div>
-                <div className="text-xl text-white font-medium">@instagram</div>
-                <div className="text-xl text-white font-medium">@facebook</div>
-                <div className="text-xl text-white font-medium">@Youtube</div>
-              </div>
-              <div>
-                <div className="text-2xl font-semibold text-white mb-2">Email</div>
-                <div className="text-xl text-white font-medium">Contact</div>
-                <div className="text-xl text-white font-medium">Address</div>
-              </div>
+            <div className="flex space-x-6 mb-2 mt-2 md:mt-4">
+              <a href="#" aria-label="Facebook" className="hover:opacity-80"><svg fill="currentColor" viewBox="0 0 24 24" className="w-8 h-8 text-blue-500"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg></a>
+              <a href="#" aria-label="Instagram" className="hover:opacity-80"><svg fill="none" viewBox="0 0 24 24" className="w-8 h-8 text-pink-500" stroke="currentColor"><rect width="20" height="20" x="2" y="2" rx="5" strokeWidth="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" strokeWidth="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a>
+              <a href="#" aria-label="LinkedIn" className="hover:opacity-80"><svg fill="currentColor" viewBox="0 0 24 24" className="w-8 h-8 text-sky-500"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg></a>
+              <a href="#" aria-label="WhatsApp" className="hover:opacity-80"><svg fill="none" viewBox="0 0 24 24" className="w-8 h-8 text-green-500" stroke="currentColor"><path d="M20.52 3.48A12.07 12.07 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.13 1.6 5.92L0 24l6.24-1.63A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.22-1.44l-.37-.22-3.7.97.99-3.6-.24-.38A9.94 9.94 0 0 1 2 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.2-7.8c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.43-2.25-1.37-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.17.18-.29.28-.48.09-.19.05-.36-.02-.5-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.62-.47-.16-.01-.36-.01-.56-.01-.19 0-.5.07-.76.34-.26.27-1 1-.99 2.43.01 1.43 1.03 2.81 1.18 3 .15.19 2.03 3.1 4.93 4.23.69.3 1.23.48 1.65.62.69.22 1.32.19 1.81.12.55-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33z"/></svg></a>
+            </div>
+          </div>
+
+          {/* Column 3: UAE Deira, Dubai, number and email */}
+          <div className="flex flex-col items-center md:items-end w-full md:w-1/3 mt-16">
+            <div className="flex items-center mb-2 mt-2 md:mt-0">
+              <span className="text-xl font-bold">UAE</span>
+            </div>
+            <div className="text-gray-300 mb-1">Deira, Dubai</div>
+            <div className="text-gray-300 mb-1">+971 50 69 19 053</div>
+            <div className="text-gray-300 mb-1">contact@brandtopup.com</div>
           </div>
         </div>
-      </div>
       </footer>
     </div>
   );
