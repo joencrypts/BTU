@@ -62,7 +62,7 @@ const OrbitSolarSystem: React.FC = () => {
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex items-center justify-center">
         <div className="rounded-full bg-gradient-to-br from-blue-700/40 to-purple-700/40 p-8 shadow-2xl">
           <img
-            src="/BRAND TOP UP - ICON LOGO WHITE.svg"
+            src="/BTUL.png"
             alt="Logo"
             className="w-24 h-24 object-contain drop-shadow-2xl"
           />

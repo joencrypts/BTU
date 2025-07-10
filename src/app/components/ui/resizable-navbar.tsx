@@ -189,7 +189,7 @@ export const NavbarLogo = () => {
       className="mr-4 flex items-center px-2 py-1 pl-4"
     >
       <img
-        src="/BRAND TOP UP - ICON LOGO WHITE.svg"
+        src="/BTUL.png"
         alt="Brand Top Up Logo"
         width={48}
         height={48}

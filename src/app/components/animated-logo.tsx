@@ -20,7 +20,7 @@ export const AnimatedLogo = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
         className="absolute left-0"
       >
-        <Image src="/BRAND TOP UP - ICON LOGO FINAL.svg" alt="Logo" width={40} height={40} className="object-contain" />
+        <Image src="/BTUL.png" alt="Logo" width={40} height={40} className="object-contain" />
       </motion.div>
 
       <motion.div
