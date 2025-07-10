@@ -198,7 +198,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative bg-black text-white py-16 px-4 overflow-hidden min-h-screen">
+      <section className="bg-black text-white px-6 pt-20 pb-6">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-6xl font-bold mb-4">We've Got the Answers You're Looking For</h1>
           <h3 className="text-lg text-gray-400 mb-10">Quick answers to your AI automation questions.</h3>
@@ -282,7 +282,7 @@ export default function Home() {
       </section>
 
       {/* Get in Touch Section */}
-      <section className="bg-black text-white min-h-screen flex items-center justify-center px-6 py-16">
+      <section className="bg-black text-white px-1 pt-1 pb-1 flex items-center justify-center min-h-screen">
         <div className="max-w-7xl w-full grid md:grid-cols-2 gap-10 items-center">
           {/* Left Text */}
           <div className="text-left">
@@ -321,7 +321,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 pb-4 pt-8 sm:pb-6 sm:pt-12 bg-black mt-auto">
+      <footer className="bg-black text-white px-0 py-0">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 text-white items-start">
           {/* Column 1: Logo only */}
           <div className="flex justify-center md:justify-start items-start w-full md:w-1/3">
