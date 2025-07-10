@@ -27,7 +27,7 @@ const SimpleLogoMarquee: React.FC<SimpleLogoMarqueeProps> = ({ logos, speedSecon
   return (
     <div
       ref={containerRef}
-      className="relative overflow-hidden max-w-3xl mx-auto bg-black py-4"
+      className="relative overflow-hidden max-w-7xl mx-auto bg-black py-4"
       style={{
         WebkitMaskImage:
           'linear-gradient(to right, transparent 0%, black 40%, black 60%, transparent 100%)',
@@ -47,7 +47,7 @@ const SimpleLogoMarquee: React.FC<SimpleLogoMarqueeProps> = ({ logos, speedSecon
             key={idx}
             src={logo.src}
             alt={logo.alt}
-            className="h-16 w-auto object-contain"
+            className="h-65 w-auto object-contain"
             style={{ minWidth: 64 }}
           />
         ))}

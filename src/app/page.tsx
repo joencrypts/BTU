@@ -97,6 +97,51 @@ export default function Home() {
 
       {/* New Hero Odyssey Section */}
       <DemoOne />
+
+      {/* About Us Section with Title Glow Effect */}
+      <section className="bg-black text-white px-6 py-28 text-center">
+        {/* Title */}
+        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight space-y-2">
+          <span
+            className="block title-glow"
+            style={{
+              background: 'linear-gradient(to right, #ffffff, #e5e5e5)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              transition: 'all 0.3s ease',
+              display: 'block',
+            }}
+          >
+            A modern creative agency
+          </span>
+          <span
+            className="block title-glow"
+            style={{
+              background: 'linear-gradient(to right, #ffffff, #e5e5e5)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              transition: 'all 0.3s ease',
+              display: 'block',
+            }}
+          >
+            based in the heart of Dubai.
+          </span>
+        </h1>
+
+        {/* Description */}
+        <p className="mt-12 max-w-4xl mx-auto text-lg md:text-xl text-white/90 leading-relaxed font-medium text-justify">
+          We solve unique business challenges through dopamine-driven narratives, sensory-rich touchpoints,
+          and emotionally intelligent design that resonates with audiences at a neurological level. Our team blends
+          creative storytelling, strategic branding, UI/UX design & marketing science to craft unforgettable
+          brand experiences to lead the future.
+        </p>
+        <style>{`
+          .title-glow:hover {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.6),
+                         0 0 20px rgba(255, 255, 255, 0.4);
+          }
+        `}</style>
+      </section>
  
 
       {/* Orbit Solar System Section */}
@@ -131,11 +176,16 @@ export default function Home() {
       <section className="relative z-10 flex flex-col items-center justify-center py-8 bg-black">
         <SimpleLogoMarquee
           logos={[
-            { src: "/sample%20logos/prsch.png", alt: "Prsch" },
-            { src: "/sample%20logos/ncd.png", alt: "NCD" },
-            { src: "/sample%20logos/kfc.png", alt: "KFC" },
-            { src: "/sample%20logos/fb.png", alt: "Facebook" },
-            { src: "/sample%20logos/google.png", alt: "Google" },
+            { src: "/sample%20logos/logos/ENZA%20SVG%20LOGO.svg", alt: "ENZA SVG LOGO", style: { height: 96, width: 'auto', objectFit: 'contain', display: 'block' } },
+            { src: "/sample%20logos/logos/elite%20mens%20hostel%20logo.svg", alt: "elite mens hostel logo", style: { height: 96, width: 'auto', objectFit: 'contain', display: 'block' } },
+            { src: "/sample%20logos/logos/AL%20ZAFFO%20SVG%20LOGO.svg", alt: "AL ZAFFO SVG LOGO", style: { height: 96, width: 'auto', objectFit: 'contain', display: 'block' } },
+            { src: "/sample%20logos/logos/president%20education%20logo%20svg.svg", alt: "president education logo svg", style: { height: 96, width: 'auto', objectFit: 'contain', display: 'block' } },
+            { src: "/sample%20logos/logos/TM%20SVG%20LOGO..svg", alt: "TM SVG LOGO.", style: { height: 96, width: 'auto', objectFit: 'contain', display: 'block' } },
+            { src: "/sample%20logos/logos/QM%20SVG%20LOGO.svg", alt: "QM SVG LOGO", style: { height: 96, width: 'auto', objectFit: 'contain', display: 'block' } },
+            { src: "/sample%20logos/logos/SGT%20SVG%20LOGO.svg", alt: "SGT SVG LOGO", style: { height: 96, width: 'auto', objectFit: 'contain', display: 'block' } },
+            { src: "/sample%20logos/logos/TSG%20SVG%20LOGO.svg", alt: "TSG SVG LOGO", style: { height: 96, width: 'auto', objectFit: 'contain', display: 'block' } },
+            { src: "/sample%20logos/logos/SPACE%20LOGO.svg", alt: "SPACE LOGO", style: { height: 96, width: 'auto', objectFit: 'contain', display: 'block' } },
+            { src: "/sample%20logos/logos/CASH%20BOX%20SVG%20LOGO.svg", alt: "CASH BOX SVG LOGO", style: { height: 96, width: 'auto', objectFit: 'contain', display: 'block' } },
           ]}
           speedSeconds={40}
         />
@@ -243,27 +293,27 @@ export default function Home() {
             </h2>
           </div>
 
-          {/* Right Form */}
-          <form className="space-y-4 w-full max-w-lg">
+          {/* Right Form - Improved Alignment */}
+          <form className="grid grid-cols-1 gap-y-6 w-full max-w-lg">
             {/* Full Name */}
             <input type="text" placeholder="Full Name"
               className="w-full px-5 py-3 bg-transparent border border-white rounded-xl text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500 transition" />
 
             {/* Phone + Email */}
-            <div className="flex flex-col md:flex-row gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input type="tel" placeholder="Phone Number"
-                className="flex-1 px-5 py-3 bg-transparent border border-white rounded-xl text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500 transition" />
+                className="w-full px-5 py-3 bg-transparent border border-white rounded-xl text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500 transition" />
               <input type="email" placeholder="Email"
-                className="flex-1 px-5 py-3 bg-transparent border border-white rounded-xl text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500 transition" />
+                className="w-full px-5 py-3 bg-transparent border border-white rounded-xl text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500 transition" />
             </div>
 
             {/* Message */}
             <textarea rows={4} placeholder="Message"
-              className="w-full px-5 py-3 bg-transparent border border-white rounded-xl text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500 transition resize-none"></textarea>
+              className="w-full px-5 py-3 bg-transparent border border-white rounded-xl text-white placeholder-gray-400 outline-none focus:ring-2 focus:ring-pink-500 transition resize-none" />
 
             {/* Submit Button */}
             <button type="submit"
-              className="bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300">
+              className="w-full bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300">
               Submit
             </button>
           </form>
