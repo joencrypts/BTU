@@ -304,7 +304,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 text-white items-start">
           {/* Column 1: Logo only */}
           <div className="flex justify-center md:justify-start items-start w-full md:w-1/3">
-            <img src="/BTUL.png" alt="Logo" className="w-56 h-56 object-contain" />
+            <img src="/BTU FINAL FULL LOGO WHITE.svg" alt="Logo" className="w-56 h-56 object-contain" />
           </div>
 
           {/* Column 2: Socials */}
