@@ -1,0 +1,36 @@
+services:
+  # Backend API Service
+  - type: web
+    name: brandtopup-api
+    env: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend/main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: DATABASE_URL
+        value: postgresql://brandtopup_db_user:wk8kqi4an1pHHxszkbxMLwPn3b5pY9iM@dpg-d1o2f6k9c44c73cgtnn0-a.singapore-postgres.render.com/brandtopup_db
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 30
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_PASSWORD
+        value: admin123
+      - key: ALLOWED_ORIGINS
+        value: https://brandtopup-frontend.onrender.com
+
+  # Frontend Web Service
+  - type: web
+    name: brandtopup-frontend
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_API_URL
+        value: https://brandtopup-api.onrender.com 
